@@ -55,17 +55,21 @@ footer{
 
 @-webkit-keyframes logo_wiggle{
   /*Your code here.*/
-
+	from {width: 25px}
+	to {width: 420px}
 }
 
 @keyframes logo_wiggle{
   /*Your code here.*/
-
+	from {width: 25px}
+	to {width: 420px}
 } 
 
 #logo{
    /*Your code here.*/
- 
+	animation-name: logo_wiggle;
+	animation-duration: 15s;
+	position: relative;
 }
 
 /* Cards! */
@@ -73,17 +77,20 @@ footer{
     min-height: 500px;
     /*Your code here.*/
     /*Don't forget to vertically and horizontally alight the card*/
-  
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .card {
-  margin: 12px;
-  background: #fff;
-  border-radius: 7px;
-  padding: 0 0 50px 0;
+	margin: 12px;
+	background: #fff;
+	border-radius: 7px;
+	padding: 0 0 50px 0;
   /*Your code here.*/
   /*Take a look at flex-basis*/
-
+	flex-basis: 400px;
 }
 
 .card > header{
@@ -127,8 +134,13 @@ footer{
 
 /* Gallery! */
 .gallery{
-  min-height: 600px;
+	min-height: 600px;
   /*Your code here again.*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
 }
 
 .gallery > img{
@@ -142,10 +154,18 @@ header{
   background: #fff;
   border-bottom: 3px solid #50C7C7;
   /*Your  code here again.*/
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center; 
 }
 
 .nav_links{
   /*Your code here again.*/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: nowrap;
 }
 
 .nav_item a{
@@ -165,6 +185,9 @@ header{
   /* Cards! */
   .card {
     /*Your  code here again.*/
+	  display: flex;
+	  flex-basis: 225px;
+	  flex-direction: column;
   }
 
   .card_big{
@@ -175,10 +198,18 @@ header{
   /* Navbar */
   header{
     /*Your code here again.*/  
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  
   }
 
   .nav_links{
     /*Your code here again.*/  
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  flex-flow: nowrap;
   }
 
   .nav_item a{
@@ -191,8 +222,34 @@ header{
     flex-basis: 200px;
   }
   /*Your code here again.*/
-  /*You will want four selectors*/  
+  /*You will want four selectors*/ 
+	body {
+		background-image: none;
+	}
+	
+	.pricing {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	
+	.gallery {
+		display: none;
+	}
+	
+	#gallery {
+		display: none;
+	}
+	
 }
 
 /*Your code here again.*/ 
 /*Add media query to handle reduced-motion*/
+@media screen and (prefers-reduced-motion) {
+	
+	#logo {
+		animation: none;
+	}
+	
+}
