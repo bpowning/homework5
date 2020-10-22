@@ -185,9 +185,9 @@ header{
   /* Cards! */
   .card {
     /*Your  code here again.*/
-	  display: flex;
-	  flex-basis: 225px;
+	  display: flex; 
 	  flex-direction: column;
+	  flex-basis: 225px;
   }
 
   .card_big{
